@@ -13,6 +13,11 @@
 		842C12AF1DD894DE00004D6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842C12AE1DD894DE00004D6D /* Assets.xcassets */; };
 		842C12B21DD894DE00004D6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842C12B01DD894DE00004D6D /* LaunchScreen.storyboard */; };
 		842C12BA1DD8954B00004D6D /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 842C12B91DD8954B00004D6D /* art.scnassets */; };
+		848C88711DDB03CE00C9CC4B /* CoreMotionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C886C1DDB03CE00C9CC4B /* CoreMotionHelper.swift */; };
+		848C88721DDB03CE00C9CC4B /* GameHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C886D1DDB03CE00C9CC4B /* GameHelper.swift */; };
+		848C88731DDB03CE00C9CC4B /* GameUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C886E1DDB03CE00C9CC4B /* GameUtils.swift */; };
+		848C88741DDB03CE00C9CC4B /* SCNAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C886F1DDB03CE00C9CC4B /* SCNAction+Extensions.swift */; };
+		848C88751DDB03CE00C9CC4B /* SCNVector3+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C88701DDB03CE00C9CC4B /* SCNVector3+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		842C12B11DD894DE00004D6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		842C12B31DD894DF00004D6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		842C12B91DD8954B00004D6D /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		848C886C1DDB03CE00C9CC4B /* CoreMotionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreMotionHelper.swift; sourceTree = "<group>"; };
+		848C886D1DDB03CE00C9CC4B /* GameHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHelper.swift; sourceTree = "<group>"; };
+		848C886E1DDB03CE00C9CC4B /* GameUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameUtils.swift; sourceTree = "<group>"; };
+		848C886F1DDB03CE00C9CC4B /* SCNAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNAction+Extensions.swift"; sourceTree = "<group>"; };
+		848C88701DDB03CE00C9CC4B /* SCNVector3+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,7 @@
 			children = (
 				842C12A51DD894DE00004D6D /* AppDelegate.swift */,
 				842C12A91DD894DE00004D6D /* GameViewController.swift */,
+				848C886B1DDB03CE00C9CC4B /* GameUtils */,
 				842C12AB1DD894DE00004D6D /* Main.storyboard */,
 				842C12AE1DD894DE00004D6D /* Assets.xcassets */,
 				842C12B91DD8954B00004D6D /* art.scnassets */,
@@ -65,6 +76,18 @@
 				842C12B31DD894DF00004D6D /* Info.plist */,
 			);
 			path = MarbleMaze;
+			sourceTree = "<group>";
+		};
+		848C886B1DDB03CE00C9CC4B /* GameUtils */ = {
+			isa = PBXGroup;
+			children = (
+				848C886C1DDB03CE00C9CC4B /* CoreMotionHelper.swift */,
+				848C886D1DDB03CE00C9CC4B /* GameHelper.swift */,
+				848C886E1DDB03CE00C9CC4B /* GameUtils.swift */,
+				848C886F1DDB03CE00C9CC4B /* SCNAction+Extensions.swift */,
+				848C88701DDB03CE00C9CC4B /* SCNVector3+Extensions.swift */,
+			);
+			path = GameUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +164,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848C88711DDB03CE00C9CC4B /* CoreMotionHelper.swift in Sources */,
+				848C88721DDB03CE00C9CC4B /* GameHelper.swift in Sources */,
+				848C88741DDB03CE00C9CC4B /* SCNAction+Extensions.swift in Sources */,
+				848C88731DDB03CE00C9CC4B /* GameUtils.swift in Sources */,
 				842C12AA1DD894DE00004D6D /* GameViewController.swift in Sources */,
 				842C12A61DD894DE00004D6D /* AppDelegate.swift in Sources */,
+				848C88751DDB03CE00C9CC4B /* SCNVector3+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
