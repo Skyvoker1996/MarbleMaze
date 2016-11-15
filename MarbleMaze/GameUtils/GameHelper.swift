@@ -48,9 +48,9 @@ class GameHelper {
     score = 0
     lastScore = 0
     highScore = 0
-    let defaults = NSUserDefaults.standardUserDefaults()
-    score = defaults.integerForKey("lastScore")
-    highScore = defaults.integerForKey("highScore")
+    let defaults = UserDefaults.standard
+    score = defaults.integer(forKey: "lastScore")
+    highScore = defaults.integer(forKey: "highScore")
     
     initHUD()
   }
@@ -58,10 +58,10 @@ class GameHelper {
   func saveState() {
     lastScore = score
     highScore = max(score, highScore)
-    let defaults = NSUserDefaults.standardUserDefaults()
-    defaults.setInteger(lastScore, forKey: "lastScore")
-    defaults.setInteger(highScore, forKey: "highScore")
-    NSUserDefaults.standardUserDefaults().synchronize()
+    let defaults = UserDefaults.standard
+    defaults.set(lastScore, forKey: "lastScore")
+    defaults.set(highScore, forKey: "highScore")
+    UserDefaults.standard.synchronize()
   }
   
   func getScoreString(length:Int) -> String {
@@ -82,8 +82,8 @@ class GameHelper {
     
     let plane = SCNPlane(width: 3.5, height: 0.2)
     let material = SCNMaterial()
-    material.lightingModelName = SCNLightingModelConstant
-    material.doubleSided = true
+    material.lightingModel = SCNMaterial.LightingModel.constant
+    material.isDoubleSided = true
     material.diffuse.contents = skScene
     plane.materials = [material]
     
@@ -110,7 +110,7 @@ class GameHelper {
   
   func playSound(node:SCNNode, name:String) {
     let sound = sounds[name]
-    node.runAction(SCNAction.playAudioSource(sound!, waitForCompletion: false))
+    node.runAction(SCNAction.playAudio(sound!, waitForCompletion: false))
   }
   
   func reset() {

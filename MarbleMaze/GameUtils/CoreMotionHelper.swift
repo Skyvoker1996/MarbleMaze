@@ -30,17 +30,17 @@ class CoreMotionHelper {
   init() {
   }
   
-  func getAccelerometerData(interval: NSTimeInterval = 0.1, closure: ((x: Double, y: Double, z: Double) -> ())? ){
+  func getAccelerometerData(interval: TimeInterval = 0.1, closure: ((_ x: Double, _ y: Double, _ z: Double) -> ())? ){
     
-    if motionManager.accelerometerAvailable {
+    if motionManager.isAccelerometerAvailable {
       
       motionManager.accelerometerUpdateInterval = interval
       
-      motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue()) {
-        (data: CMAccelerometerData?, error: NSError?) -> Void in
+      motionManager.startAccelerometerUpdates(to: OperationQueue()) {
+        (data: CMAccelerometerData?, error: Error?) in
         
         if closure != nil{
-          closure!(x: data!.acceleration.x,y: data!.acceleration.y,z: data!.acceleration.z)
+          closure!(data!.acceleration.x,data!.acceleration.y,data!.acceleration.z)
         }
         
       }

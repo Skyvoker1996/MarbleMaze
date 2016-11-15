@@ -39,7 +39,7 @@ extension SCNVector3 {
         Inverts vector
     */
     mutating func invert() -> SCNVector3 {
-        self * -1
+        _ = self * -1
         return self
     }
     
@@ -119,7 +119,7 @@ extension SCNVector3 {
         Project onto Vector
     */
     func project(ontoVector: SCNVector3) -> SCNVector3 {
-        let scale: Float = dotBetweenVectors(ontoVector, v2: self) / dotBetweenVectors(ontoVector, v2: ontoVector)
+        let scale: Float = dotBetweenVectors(v1: ontoVector, v2: self) / dotBetweenVectors(v1: ontoVector, v2: ontoVector)
         let v: SCNVector3 = ontoVector * scale
         return v
     }
@@ -148,7 +148,7 @@ func +(left: SCNVector3, right: SCNVector3) -> SCNVector3 {
 /**
     v1 += v2
 */
-func +=(inout left: SCNVector3, right: SCNVector3) {
+func +=( left: inout SCNVector3, right: SCNVector3) {
     left = left + right
 }
 
@@ -162,7 +162,7 @@ func -(left: SCNVector3, right: SCNVector3) -> SCNVector3 {
 /**
     v1 -= v2
 */
-func -=(inout left: SCNVector3, right: SCNVector3) {
+func -=( left: inout SCNVector3, right: SCNVector3) {
     left = left - right
 }
 
@@ -176,7 +176,7 @@ func *(left: SCNVector3, right: SCNVector3) -> SCNVector3 {
 /**
     v1 *= v2
 */
-func *=(inout left: SCNVector3, right: SCNVector3) {
+func *=( left: inout SCNVector3, right: SCNVector3) {
     left = left * right
 }
 
@@ -190,7 +190,7 @@ func *(left: SCNVector3, right: Float) -> SCNVector3 {
 /**
     v *= x
 */
-func *=(inout left: SCNVector3, right: Float) {
+func *=( left: inout SCNVector3, right: Float) {
     left = SCNVector3Make(left.x * right, left.y * right, left.z * right)
 }
 
@@ -204,7 +204,7 @@ func /(left: SCNVector3, right: SCNVector3) -> SCNVector3 {
 /**
     v1 /= v2
 */
-func /=(inout left: SCNVector3, right: SCNVector3) {
+func /=( left: inout SCNVector3, right: SCNVector3) {
     left = SCNVector3Make(left.x / right.x, left.y / right.y, left.z / right.z)
 }
 
@@ -218,7 +218,7 @@ func /(left: SCNVector3, right: Float) -> SCNVector3 {
 /**
     v /= x
 */
-func /=(inout left: SCNVector3, right: Float) {
+func /=( left: inout SCNVector3, right: Float) {
     left = SCNVector3Make(left.x / right, left.y / right, left.z / right)
 }
 
