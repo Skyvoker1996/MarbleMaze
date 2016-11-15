@@ -68,8 +68,8 @@
 			children = (
 				842C12A51DD894DE00004D6D /* AppDelegate.swift */,
 				842C12A91DD894DE00004D6D /* GameViewController.swift */,
-				848C886B1DDB03CE00C9CC4B /* GameUtils */,
 				842C12AB1DD894DE00004D6D /* Main.storyboard */,
+				848C886B1DDB03CE00C9CC4B /* GameUtils */,
 				842C12AE1DD894DE00004D6D /* Assets.xcassets */,
 				842C12B91DD8954B00004D6D /* art.scnassets */,
 				842C12B01DD894DE00004D6D /* LaunchScreen.storyboard */,
